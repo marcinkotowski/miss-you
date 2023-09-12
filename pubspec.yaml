@@ -7,9 +7,10 @@ environment:
   sdk: ">=3.0.6 <4.0.0"
 
 dependencies:
-  drop_shadow: ^0.1.0
   flutter:
     sdk: flutter
+  drop_shadow: ^0.1.0
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:
