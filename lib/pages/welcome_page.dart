@@ -1,5 +1,8 @@
 import 'package:drop_shadow/drop_shadow.dart';
 import 'package:flutter/material.dart';
+import '../theme.dart';
+import 'login_page.dart';
+import 'registration_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -9,7 +12,6 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -25,35 +27,63 @@ class WelcomePage extends StatelessWidget {
                     opacity: 0.15,
                     child: Image.asset(
                       imagePath,
-                      height: 150,
+                      height: 160,
                     ),
                   ),
+                  const SizedBox(height: 10),
                   const Text(
                     "MISS YOU",
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.w800),
                   ),
+                  const SizedBox(height: 10),
                   const Text(
                     "Send a reminder your love",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(30.0),
+              padding: const EdgeInsets.only(bottom: 40),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text("Login"),
+                  OutlinedButton(
+                    style: outlinedButtonStyle.copyWith(
+                      minimumSize: MaterialStateProperty.all(
+                        const Size(150, 45),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ),
+                      );
+                    },
+                    child: const Text("LOGIN"),
                   ),
-                  const SizedBox(width: 10.0),
+                  const SizedBox(width: 15.0),
                   ElevatedButton(
-                    onPressed: () {},
-                    child: const Text("Register"),
-                  )
+                    style: elevatedButtonStyle.copyWith(
+                      minimumSize: MaterialStateProperty.all(
+                        const Size(150, 45),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegistrationPage(),
+                        ),
+                      );
+                    },
+                    child: const Text("REGISTER"),
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
