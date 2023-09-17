@@ -8,7 +8,7 @@ class RegistrationPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: const Text("Register"),
+          child: const Text('Register'),
           onPressed: () {
             Navigator.pop(context);
           },

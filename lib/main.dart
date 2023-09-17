@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:miss_you/pages/welcome_page.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'theme.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:miss_you/firebase_options.dart';
+import 'package:miss_you/pages/welcome_page.dart';
+import 'package:miss_you/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

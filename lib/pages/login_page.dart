@@ -8,7 +8,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: const Text("Login"),
+          child: const Text('Login'),
           onPressed: () {
             Navigator.pop(context);
           },
