@@ -1,13 +1,16 @@
 import 'package:drop_shadow/drop_shadow.dart';
 import 'package:flutter/material.dart';
-import 'package:miss_you/pages/login_page.dart';
-import 'package:miss_you/pages/registration_page.dart';
+import 'package:miss_you/screens/sign_in_screen.dart';
+import 'package:miss_you/screens/sign_up_screen.dart';
 import 'package:miss_you/theme.dart';
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
 
-  static const String _imagePath = 'assets/paper_airplane.png';
+  static String imagePath = 'assets/paper_airplane.png';
+  static Page<dynamic> page() {
+    return const MaterialPage(child: WelcomeScreen());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,7 @@ class WelcomePage extends StatelessWidget {
                     offset: const Offset(0, 4),
                     opacity: 0.15,
                     child: Image.asset(
-                      _imagePath,
+                      imagePath,
                       height: 160,
                     ),
                   ),
@@ -57,8 +60,8 @@ class WelcomePage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute<LoginPage>(
-                          builder: (context) => const LoginPage(),
+                        MaterialPageRoute<dynamic>(
+                          builder: (context) => const SignInScreen(),
                         ),
                       );
                     },
@@ -74,8 +77,8 @@ class WelcomePage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute<RegistrationPage>(
-                          builder: (context) => const RegistrationPage(),
+                        MaterialPageRoute<dynamic>(
+                          builder: (context) => const SignUpScreen(),
                         ),
                       );
                     },
